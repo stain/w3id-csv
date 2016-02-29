@@ -18,6 +18,9 @@ def htaccess(output,src,linktype, target):
 RewriteEngine On
 RewriteRule ^$ {0} [L,R]
 """.format(target), file=htfile)
+    ## FIXME: Group together by common path
+    ## FIXME: Avoid making folder if output does not end with /
+    ## (declare in parent .htaccess)
 
     print(srcpath,"->",target)
 
@@ -61,7 +64,8 @@ def main():
 
     if args.wipe and args.output.exists():
         delete_all(args.output)
-    args.output.mkdir()
+    if not args.output.exists():
+        args.output.mkdir()
     for (src,linktype,target) in rows:
         htaccess(args.output,src,linktype,target)
 
