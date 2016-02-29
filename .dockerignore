@@ -1,0 +1,4 @@
+httpd
+docker-compose.yaml
+.git
+build

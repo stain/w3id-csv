@@ -1,0 +1,17 @@
+www:
+  image: busybox
+  volumes:
+    - /www
+
+cvs2w3id:
+  build: .
+  volumes_from:
+    - www
+  command: ["python", "./cvs2w3id.py", "--output=/www/", "purl_example.csv"]
+
+httpd:
+  build: httpd
+  volumes_from:
+    - www
+  ports:
+    - 8087:80
