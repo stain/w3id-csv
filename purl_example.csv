@@ -1,0 +1,3 @@
+"z_id","p_id","type","target","created","lastmodified","status","indexed"
+"1","/example/path","302","http://example.com/redirectedPath","2016-02-29T13:08:11+0000","2016-02-29T13:08:11+0000","OK?","1"
+"2","/example/path/deeper","302","http://example.com/redirectedDeeper","2016-02-29T13:08:11+0000","2016-02-29T13:08:11+0000","OK?","1"
